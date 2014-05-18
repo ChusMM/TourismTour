@@ -1,0 +1,19 @@
+
+    <resources>
+        <string name="title">Tourism tour</string>
+        <string name="app_name">Tourism tour</string>
+        <string name="language">English</string>
+        <string name="coordinates">Coordinates</string>
+        <string name="latitude">Latitude:</string>
+        <string name="latitude_value"></string>
+        <string name="longitude">Longitude:</string>
+        <string name="longitude_value"></string>
+        <color name="white">#FFFFFF</color>
+        <color name="black">#000000</color>
+        <string name="accept">Accept</string>
+        <string name="cancel">Cancel</string>
+        <string name="contentDescription">Description</string>
+        <string name="acceptance">Do you want to listen place description?</string>
+        <string name="hiddensound">Disable sound?</string>
+        <string name="hiddentext">Disable text?</string>
+    </resources>

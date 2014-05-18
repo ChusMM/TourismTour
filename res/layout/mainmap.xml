@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/mainLayout"
+	android:orientation="vertical"
+	android:background="@+color/black"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+
+	<com.google.android.maps.MapView
+	    android:id="@+id/mapview"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="true"
+	    android:layout_above="@+id/AlertValue"
+	    android:apiKey="07lqqWtgzI8oLbFJR_-WAPSEXIpdfaVghG8V58w"
+	    android:clickable="true" />
+
+    <TextView
+        android:id="@+id/AlertValue"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_above="@+id/Coordinates"
+        android:background="@color/black"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<LinearLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/Coordinates"
+	    android:layout_above="@+id/Longitude"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:background="@color/black"
+	    android:orientation="horizontal" >
+
+		<TextView
+		    android:id="@+id/Coordinates_Label"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="center" 
+		    android:text="@string/coordinates"
+		    android:textColor="#990000"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	</LinearLayout>
+	
+	<LinearLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/Longitude"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/Latitude"
+	    android:layout_alignParentLeft="true"
+	    android:background="@color/black"
+	    android:orientation="horizontal" >
+		
+    	<TextView
+	    	android:id="@+id/longitude"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:text="@string/longitude"
+	    	android:textStyle="bold"
+	    	android:textColor="@color/white"
+	    	android:layout_weight="0.5"
+	    	android:gravity="left"
+	    	android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<TextView
+	    	android:id="@+id/longitude_value"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:text="@string/longitude_value"
+	    	android:textStyle="bold"
+	    	android:textColor="@color/white"
+	    	android:layout_weight="0.5"
+	    	android:gravity="right"
+	    	android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
+    </LinearLayout>
+
+	<LinearLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/Latitude"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentBottom="true"
+	    android:background="@color/black"
+	    android:orientation="horizontal" >
+
+		<TextView
+		    android:id="@+id/latitude"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/latitude"
+		    android:textStyle="bold"
+	    	android:textColor="@color/white"
+	    	android:layout_weight="0.5"
+	    	android:gravity="left"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+		<TextView
+		    android:id="@+id/latitude_value"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/latitude_value"
+		    android:textStyle="bold"
+	    	android:textColor="@color/white"
+	    	android:layout_weight="0.5"
+	    	android:gravity="right"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
+	</LinearLayout>
+
+</RelativeLayout>

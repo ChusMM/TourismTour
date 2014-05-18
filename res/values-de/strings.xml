@@ -1,0 +1,15 @@
+
+    <resources>
+        <string name="title">Tourism tour</string>
+        <string name="app_name">Tourism tour</string>
+        <string name="language">Deustch</string>
+        <string name="coordinates">Richtlinien</string>
+        <string name="latitude">Breite:</string>
+        <string name="latitude_value"></string>
+        <string name="longitude">Länge:</string>
+        <string name="longitude_value"></string>
+        <string name="accept">annehmen</string>
+        <string name="cancel">abbrechen</string>
+        <string name="contentDescription">Beschreibung</string>
+        <string name="acceptance">Bist du hören Stelle Beschreibung?</string>
+    </resources>
