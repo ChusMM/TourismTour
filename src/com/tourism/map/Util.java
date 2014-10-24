@@ -10,5 +10,8 @@ public class Util {
 
         return Bitmap.createScaledBitmap(bm, scaleWidth, scaleHeight, true);
     }
-
+    
+    public static String formatCoordinate(String value) throws IndexOutOfBoundsException {
+    	return value.substring(0, Math.min(9, value.length()));
+    }
 }

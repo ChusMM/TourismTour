@@ -27,52 +27,48 @@ public final class R {
         public static final int tourism=0x7f020009;
     }
     public static final class id {
-        public static final int AlertValue=0x7f080002;
-        public static final int Buttons=0x7f080014;
-        public static final int Coordinates=0x7f080003;
-        public static final int Coordinates_Label=0x7f080005;
-        public static final int Latitude=0x7f080006;
-        public static final int Longitude=0x7f080004;
-        public static final int accept=0x7f080015;
-        public static final int cancel=0x7f080016;
-        public static final int description=0x7f080011;
-        public static final int divider=0x7f08000e;
-        public static final int exit=0x7f080017;
-        public static final int header=0x7f08000b;
-        public static final int hiddensound=0x7f080010;
-        public static final int latitude=0x7f080009;
-        public static final int latitude_value=0x7f08000a;
-        public static final int logo=0x7f08000c;
-        public static final int longitude=0x7f080007;
-        public static final int longitude_value=0x7f080008;
-        public static final int mainLayout=0x7f080000;
-        public static final int mapview=0x7f080001;
-        public static final int options=0x7f08000f;
-        public static final int placeImage=0x7f080012;
-        public static final int questionDialog=0x7f080013;
-        public static final int title=0x7f08000d;
+        public static final int AlertValue=0x7f080009;
+        public static final int Coordinates=0x7f08000a;
+        public static final int Coordinates_Label=0x7f08000c;
+        public static final int Latitude=0x7f08000d;
+        public static final int Longitude=0x7f08000b;
+        public static final int description=0x7f080004;
+        public static final int exit=0x7f080012;
+        public static final int hiddensound=0x7f080003;
+        public static final int latitude=0x7f080010;
+        public static final int latitude_value=0x7f080011;
+        public static final int listen_layout=0x7f080000;
+        public static final int logo=0x7f080001;
+        public static final int longitude=0x7f08000e;
+        public static final int longitude_value=0x7f08000f;
+        public static final int mainLayout=0x7f080007;
+        public static final int mapview=0x7f080008;
+        public static final int placeImage=0x7f080005;
+        public static final int questionDialog=0x7f080006;
+        public static final int title=0x7f080002;
     }
     public static final class layout {
-        public static final int mainmap=0x7f030000;
-        public static final int requestdialog=0x7f030001;
+        public static final int listen_dialog=0x7f030000;
+        public static final int mainmap=0x7f030001;
     }
     public static final class menu {
         public static final int mainmenu=0x7f070000;
     }
     public static final class string {
-        public static final int accept=0x7f040008;
-        public static final int acceptance=0x7f04000b;
+        public static final int accept=0x7f040009;
+        public static final int acceptance=0x7f04000c;
         public static final int app_name=0x7f040001;
-        public static final int cancel=0x7f040009;
-        public static final int contentDescription=0x7f04000a;
+        public static final int cancel=0x7f04000a;
+        public static final int contentDescription=0x7f04000b;
         public static final int coordinates=0x7f040003;
-        public static final int hiddensound=0x7f04000c;
-        public static final int hiddentext=0x7f04000d;
+        public static final int hiddensound=0x7f04000d;
+        public static final int hiddentext=0x7f04000e;
         public static final int language=0x7f040002;
         public static final int latitude=0x7f040004;
         public static final int latitude_value=0x7f040005;
         public static final int longitude=0x7f040006;
         public static final int longitude_value=0x7f040007;
+        public static final int ok=0x7f040008;
         public static final int title=0x7f040000;
     }
     public static final class style {

@@ -4,8 +4,11 @@
     android:versionCode="1"
     android:versionName="1.0">
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-sdk 
+        android:minSdkVersion="8" 
+        android:targetSdkVersion="19"/>
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -26,17 +29,19 @@
         android:icon="@drawable/tourism"
         android:theme="@style/AppTheme">
 		<uses-library android:name="com.google.android.maps"/>
-		<activity android:name="BluetoothOutput"
-		    	android:configChanges="keyboardHidden|orientation"
-		    	android:theme="@android:style/Theme.Translucent.NoTitleBar"
-	    		android:screenOrientation="portrait">
-		</activity>
+		
 		<activity android:name="MainMap"
 		    	android:configChanges="keyboardHidden|orientation">
 			<intent-filter>
 			    <action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
+		</activity>
+		
+		<activity android:name="BluetoothOutput"
+		    	android:configChanges="keyboardHidden|orientation"
+		    	android:theme="@android:style/Theme.Translucent.NoTitleBar"
+	    		android:screenOrientation="portrait">
 		</activity>
     </application>
 

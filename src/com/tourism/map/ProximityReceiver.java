@@ -10,34 +10,36 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.location.LocationManager;
 
-public class ProximityIntentReceiver extends BroadcastReceiver {
-     
+public class ProximityReceiver extends BroadcastReceiver { 
     private static final int NOTIFICATION_ID = 1000;
+    
+    public static final String TITLE = "title";
+    public static final String DESCRIPTION = "description";
+    
     BluetoothOutput output;
 
     @Override
     public void onReceive(Context context, Intent intent) {
 		String key = LocationManager.KEY_PROXIMITY_ENTERING;
 		Boolean entering = intent.getBooleanExtra(key, false);
-		if(entering){
-	    	String t = intent.getStringExtra("title");
-	    	String description = intent.getStringExtra("description");
+		if (entering) {
+	    	String title = intent.getStringExtra(TITLE);
+	    	String description = intent.getStringExtra(DESCRIPTION);
+	    	
 			NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT);
 			Notification notification = createNotification();
-			CharSequence title = t;
-			CharSequence seq = description;
-			notification.setLatestEventInfo(context,title,seq, pendingIntent);
+			
+			notification.setLatestEventInfo(context, (CharSequence) title, (CharSequence) description, pendingIntent);
 			notificationManager.notify(NOTIFICATION_ID, notification);
-			Intent myIntent = new Intent(context, BluetoothOutput.class);
-			myIntent.putExtra("outputReproduce", seq.toString());
-			context.startActivity(myIntent);
+			
+			Intent blueToothOutput = new Intent(context, BluetoothOutput.class);
+			blueToothOutput.putExtra(BluetoothOutput.OUTPUT , description);
+			context.startActivity(blueToothOutput);
 		}
     }
     
-    protected void onDestroy(){
-    	
-    }
+    protected void onDestroy() { }
     
     private Notification createNotification() {
     	Notification notification = new Notification();

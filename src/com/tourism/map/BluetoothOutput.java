@@ -24,6 +24,8 @@ import android.speech.tts.TextToSpeech;
 
 public class BluetoothOutput extends Activity implements TextToSpeech.OnInitListener, TextToSpeech.OnUtteranceCompletedListener{
 
+	public static final String OUTPUT = "outputReproduce";
+	
 	private BluetoothAdapter mBluetoothAdapter;
 	private List<BluetoothDevice> mArrayAdapter;
 	private boolean hasActiveBluetooth;
@@ -39,7 +41,7 @@ public class BluetoothOutput extends Activity implements TextToSpeech.OnInitList
 		//FileWriter writer = null;
 		//try{
 			//writer = new FileWriter(new File("/storage/sdcard0/traces.txt"),true);
-			textToReproduce = getIntent().getStringExtra("outputReproduce");
+			textToReproduce = getIntent().getStringExtra(OUTPUT);
 			//writer.write("Text to reproduce: " + textToReproduce); 
 			hasActiveBluetooth = false;
 			mArrayAdapter = new ArrayList<BluetoothDevice>();
