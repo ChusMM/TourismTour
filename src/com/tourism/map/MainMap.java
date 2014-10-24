@@ -233,17 +233,6 @@ public class MainMap extends MapActivity implements LocationListener ,TextToSpee
 		crit.setAccuracy(Criteria.ACCURACY_FINE);
 
 		locationListenerNet = locationListenerGps = new TourLocationListener();
-		/*new LocationListener() {
-			public void onLocationChanged(Location newLoc) {
-				newLocation(newLoc);
-			}
-
-			public void onProviderDisabled(String provider) { }
-
-			public void onProviderEnabled(String provider) { }
-
-			public void onStatusChanged(String provider, int status, Bundle extras) { }
-        };*/
 		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 15000, 0, locationListenerNet, Looper.myLooper());
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 0, locationListenerGps, Looper.myLooper());
 	}
@@ -254,20 +243,15 @@ public class MainMap extends MapActivity implements LocationListener ,TextToSpee
 			try {
 				newLocation(newLoc);
 			} catch (NullPointerException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				// TODO: Action @Oscar
 			} catch (IndexOutOfBoundsException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			
 			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			
 			} catch (ServerConnectionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			
 			}
 		}
 
@@ -395,7 +379,7 @@ public class MainMap extends MapActivity implements LocationListener ,TextToSpee
 	public void onClick(DialogInterface dialog, int which) {
 		if (dialog == listenDialog && which == DialogInterface.BUTTON_POSITIVE) {
 			tts.speak(placeDescription, TextToSpeech.QUEUE_FLUSH, null);
-			while(tts.isSpeaking()){}
+			while(tts.isSpeaking()) { }
 		}
 	}
 	
