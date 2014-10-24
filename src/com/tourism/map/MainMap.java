@@ -59,7 +59,7 @@ public class MainMap extends MapActivity implements LocationListener ,TextToSpee
 	private LocationListener locationListenerGps;
 	private LocationListener locationListenerNet;
 	private List<ProximityReceiver> recieverList;
-	private ListenDialog listenDialog;
+	private ListenDialog listenDialog = null;
 	private boolean wifichanged;
 
 	@Override
@@ -371,6 +371,9 @@ public class MainMap extends MapActivity implements LocationListener ,TextToSpee
 
 	public void acceptRequest(View view) {
 		// Crear un dialogo sin guarrear el código de la clase que lo  lanza
+		if (listenDialog != null) {
+			listenDialog.dismiss();
+		}
 		listenDialog = new ListenDialog(getBaseContext(), imageDescription, placeTitle, this);
 		listenDialog.setOnDismissListener(this);
 		listenDialog.show();
