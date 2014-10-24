@@ -31,7 +31,6 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
-import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
