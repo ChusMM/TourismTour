@@ -131,22 +131,23 @@ public class MainMap extends MapActivity implements LocationListener ,TextToSpee
 	@Override
 	protected void onDestroy() {
 		//Close the Text to Speech Library
-		for(int i = 0;i<recieverList.size();i++){
+		for(int i = 0; i < recieverList.size(); i ++) {
 			unregisterReceiver(recieverList.get(i));
 		}
+		
 		String provider = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
-		if(provider.contains("gps") && provider.contains("net")){ //if gps is enabled
+		if (provider.contains("gps") && provider.contains("net")) { //if gps is enabled
 			locationManager.removeUpdates(locationListenerGps);
 			locationManager.removeUpdates(locationListenerNet);
 			Intent intent = new Intent("android.location.GPS_ENABLED_CHANGE");
 			intent.putExtra("enabled", false);
 			sendBroadcast(intent);
 		}
-		if(wifichanged){
+		if (wifichanged) {
 			WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 			wifi.setWifiEnabled(false);
 		}
-		if(tts != null) {
+		if (tts != null) {
 			tts.stop();
 			tts.shutdown();
 		}
@@ -177,7 +178,7 @@ public class MainMap extends MapActivity implements LocationListener ,TextToSpee
 		ProximityConnection proxConn = new ProximityConnection();
 		proxConn.execute();
 		// Consejo
-		// Poco sentido tiene hacer una asyncTask  para luego bloquearen el hilo principal hasta que termina la ejecución
+		// Poco sentido tiene hacer una asyncTask  para luego bloquear en el hilo principal hasta que termina la ejecución de la misma
 		String descr = proxConn.get();
 		if (descr == null) {
 			throw proxConn.getProxException();
