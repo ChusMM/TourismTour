@@ -11,56 +11,44 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import com.tourism.map.exceptions.ServerConnectionException;
+import com.tourism.map.exceptions.ProximityLoadException;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
-public class ServerConnection extends AsyncTask<String,String,String>{
-	private static final String TAG = "com.tourism.map.ServerConnection";
-	private static final String URL = "http://tourapp.esy.es//main.php";
+public class ProximityConnection extends AsyncTask<Void, Void, String> {
+	private static final String TAG = "com.tourism.map.ProximityConnection";
 	
-	private float latitude;
-	private float longuitude;
-	private ServerConnectionException mServException = new ServerConnectionException("Fatal unexpected Proximity exception");
+	private static final String URL = "http://tourapp.esy.es//coordinates.php";
+	private ProximityLoadException mProxException = new ProximityLoadException("Fatal unexpected Proximity exception");
 	
-	public ServerConnection(float lat, float lon) {
-		this.latitude = lat;
-		this.longuitude = lon;
-	}
-	
-	public ServerConnectionException getServException() {
-		return this.mServException;
+	public ProximityLoadException getProxException() {
+		return this.mProxException;
 	}
 	
 	@Override
-	protected String doInBackground(String... params) {
+	protected String doInBackground(Void... args) {
 		try {
 			ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-			nameValuePairs.add(new BasicNameValuePair("PosY", (Float.valueOf(latitude)).toString()));
-			nameValuePairs.add(new BasicNameValuePair("PosX", (Float.valueOf(longuitude)).toString()));
-
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpPost httppost = new HttpPost(URL);
 			httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-
+			
 			HttpResponse response = httpclient.execute(httppost);
 			HttpEntity entity = response.getEntity();
-			return EntityUtils.toString(entity);
+			return EntityUtils.toString(entity, "ISO-8859-1");
 		} catch (ClientProtocolException e) {
 			Log.e(TAG, e.toString());
-			mServException = new ServerConnectionException(e.getMessage());
+			mProxException = new ProximityLoadException(e.getMessage());
 			return null;
 		} catch (IOException e) {
 			Log.e(TAG, e.toString());
-			mServException = new ServerConnectionException(e.getMessage());
+			mProxException = new ProximityLoadException(e.getMessage());
 			return null;
 		} catch (Exception e) {
 			Log.e(TAG, e.toString());
-			mServException = new ServerConnectionException(e.getMessage());
+			mProxException = new ProximityLoadException(e.getMessage());
 			return null;
 		}
 	}
