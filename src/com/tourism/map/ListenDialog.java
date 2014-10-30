@@ -27,6 +27,7 @@ public class ListenDialog extends AlertDialog {
 	
 	@Override
     protected void onCreate(Bundle savedState) {
+		super.onCreate(savedState);
 		mView = getLayoutInflater().inflate(R.layout.listen_dialog, null);
 		setTitle("");
 		
@@ -39,7 +40,6 @@ public class ListenDialog extends AlertDialog {
 		setButton(DialogInterface.BUTTON_NEUTRAL, context.getString(R.string.cancel), mListener);
 		setButton(DialogInterface.BUTTON_POSITIVE, context.getString(R.string.ok), mListener);
 
-		super.onCreate(savedState);
 		mView.findViewById(R.id.listen_layout).setVisibility(View.VISIBLE);
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE | WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 		

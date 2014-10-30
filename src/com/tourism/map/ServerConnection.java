@@ -21,7 +21,7 @@ import android.util.Log;
 
 public class ServerConnection extends AsyncTask<String,String,String>{
 	private static final String TAG = "com.tourism.map.ServerConnection";
-	private static final String URL = "http://tourapp.esy.es//main.php";
+	private static final String URL = "http://tourismtour.esy.es//main.php";
 	
 	private float latitude;
 	private float longuitude;

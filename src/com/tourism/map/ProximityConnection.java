@@ -20,7 +20,7 @@ import android.util.Log;
 public class ProximityConnection extends AsyncTask<Void, Void, String> {
 	private static final String TAG = "com.tourism.map.ProximityConnection";
 	
-	private static final String URL = "http://tourapp.esy.es//coordinates.php";
+	private static final String URL = "http://tourismtour.esy.es//coordinates.php";
 	private ProximityLoadException mProxException = new ProximityLoadException("Fatal unexpected Proximity exception");
 	
 	public ProximityLoadException getProxException() {
